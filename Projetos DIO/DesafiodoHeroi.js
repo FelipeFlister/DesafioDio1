@@ -1,6 +1,6 @@
 //-----------------------------variáveis--------------------------------
 let nomeDoHeroi = "Percy"
-let xp = ("coloque o nível aqui!")
+let xp = (3000)
 let nivel = "Cobre"
 //-----------------------------condições--------------------------------
 if (xp <= 1000 ){                                                       
