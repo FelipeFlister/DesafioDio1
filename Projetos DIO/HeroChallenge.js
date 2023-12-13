@@ -1,3 +1,4 @@
+//Note: This is a english tradution of my official code, which was in Pt Br.
 //-----------------------------Variables-------------------------------------
 let heroName = "Percy"
 let xp = (3000)
