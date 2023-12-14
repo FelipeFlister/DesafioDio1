@@ -111,7 +111,7 @@ function PvzZ(){
         console.log("Você é do time dos zumbis")
     }
 }
-//--------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------
 //funções com parametros//E uma função sem valor ou undefined
 NPCStore(100, "Chapéu", true, "dia")
 function NPCStore(preco, item, edisponivel, quehorae){
@@ -146,7 +146,7 @@ function NPCStore2(preco2 = 200, item2, edisponivel2, quehorae2){
     }
 
 }
-//---------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------
 //funções com retornos
 function soma (n1, n2){
    const s = n1 + n2
@@ -155,3 +155,93 @@ function soma (n1, n2){
 
 soma1 = soma(1,2)
 console.log(soma1)
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//JSOM
+//Exemplo sem JSOM
+//Um relatório sobre um paciente do centro Pokémon
+let CenterName = "Alola Pokémon Center"
+let DoctorName = "Joy"
+let Time = 15
+let Trainer = "Xicom"
+let HimPokemon = ["Amaura", "Voltorb", "Salandit", "ALola Eggxecuttor"]
+let EndTime = 17
+MedicinNote(CenterName, DoctorName, Time, Trainer, HimPokemon, EndTime)
+function MedicinNote(CenterName, DoctorName, Time, Trainer, HimPokemon, EndTime){
+    console.log("Aqui está sua nota médica, na próxima vez que você vier aqui ou em outro centro Pokémon, apresente ela, e você vai ser atendido mais rapidamente.")
+    console.log(CenterName + " Note")
+    console.log("Dados sobre o seu atendimento:")
+    console.log("Você foi atendido por: " + DoctorName)
+    console.log("Ás: " + Time + " Horas")
+    console.log("-----------------------------------------------------------------------------------------------------------------------------")
+    console.log("Informações sobre o treinador:")
+    console.log("Nome do Treinador: " + Trainer)
+    console.log("Seus Pokémons: " + HimPokemon)
+    console.log("Pokémons curados: " + HimPokemon[1] + " e " + HimPokemon[2])
+    console.log("Fim do atendimento: " + EndTime + " Horas")
+    console.log("-----------------------------------------------------------------------------------------------------------------------------")
+    console.log("A avaliação do atendimento: " + (EndTime + Time/2 - 17))
+}
+//Exemplo com JSON
+let CenterInfo = {
+    CenterName1: "Paldea Pokémon Center",
+    DoctorName1: "Joy1",
+    Time1: 16,
+    Trainer1: "Ash",
+    HimPokemon1: {
+        0: ["Pikachu" , 200],
+        1: ["Fuecoco", 5],
+        2: ["Doduo", 2] ,
+    },
+    EndTime1: 17,
+}
+MedicinNote1(CenterInfo)
+function MedicinNote1(CenterInfo){
+    
+    console.log("Aqui está sua nota médica, na próxima vez que você vier aqui ou em outro centro Pokémon, apresente ela, e você vai ser atendido mais rapidamente.")
+    console.log(CenterInfo.CenterName1 + " Note")
+    console.log("Dados sobre o seu atendimento:")
+    console.log("Você foi atendido por: " + CenterInfo.DoctorName1)
+    console.log("Ás: " + CenterInfo.Time1 + " Horas")
+    console.log("-----------------------------------------------------------------------------------------------------------------------------")
+    console.log("Informações sobre o treinador:")
+    console.log("Nome do Treinador: " + CenterInfo.Trainer1)
+    for(let PkmL in CenterInfo.HimPokemon1){                        
+        let [PName, PLevel] = CenterInfo.HimPokemon1[PkmL]
+        console.log("Seus Pokémons: " + PName + " e seus níveis são: " + PLevel )
+    }
+    console.log("Pokémons curados: " + CenterInfo.HimPokemon1["1"][0] + " e " + CenterInfo.HimPokemon1["2"][0])
+    console.log("Fim do atendimento: " + CenterInfo.EndTime1 + " Horas")
+    console.log("-----------------------------------------------------------------------------------------------------------------------------")
+    console.log("A avaliação do atendimento: " + (CenterInfo.EndTime + CenterInfo.Time/2 - 17))
+}
+//Classes e Objetos
+class FormaDeBolo{ // uma classe que guarda funções ou objetos
+    constructor(SaborDaMassa,RecheioDaMassa){ // uma função sobre o sabor e recheio
+        this.SaborDaMassa = SaborDaMassa
+        this.RecheioDaMassa = RecheioDaMassa
+    }
+    escrever(){ // é uma função que escreve o que tá dentro mais os parametros definifos 
+        console.log("Eu posso fazer um bolo de: " + (this.SaborDaMassa) + " com recheio de: " + (this.RecheioDaMassa))
+    }
+}
+let BoloDeFesta = new FormaDeBolo("Massa de Chocolate", "Brigadeiro") // uma váriavel que coloca novos parametros no constructor para o sabor e recheio
+BoloDeFesta.escrever()
+
+class Player{
+    constructor(NomeDoPlayer, HorasJogadas, BlocosDestruidos, BlocosColocados, MobsDerrotados){// os parametros dentro dele são atribuídos as propriedades
+        this.NomeDoPlayer = NomeDoPlayer//são como variáveis 
+        this.HorasJogadas = HorasJogadas
+        this.BlocosDestruidos = BlocosDestruidos
+        this.BlocosColocados = BlocosColocados
+        this.MobsDerrotados = MobsDerrotados
+    }
+
+    infoSOPlayer(){
+        console.log("O player de nome:" + (this.NomeDoPlayer) + ", jogou por:" + (this.HorasJogadas) + " hora(s), e destruiu:" + (this.BlocosDestruidos) + " blocos, e colocou:" + (this.BlocosColocados) + " blocos, e derrotou:" + (this.MobsDerrotados) + " mobs.")
+    }
+    
+}
+let DadoSOPlayer1 = new Player("Steve", 1, 500, 30, 10) //Define novos dados para a classe player
+let DadoSOPlayer2 = new Player("Alex", 2.5, 1000, 100, 20)// A mesma coisa do que de ^
+DadoSOPlayer1.infoSOPlayer()//Executa a função infoSOPlayer com os novos dados sobre o Playe
+DadoSOPlayer2.infoSOPlayer()//A mesma coisa do que de ^
