@@ -1,27 +1,27 @@
 //--------------------------------A Classe do Player-----------------------------------------------
-class Player{
-    constructor(name, age, type, typeAttack){
-        this.name = name
-        this.age = age
-        this.type = type
-        this.typeAttack = typeAttack
+class Jogador{
+    constructor(Nome, Idade, Tipo, TipoDeAtaque){
+        this.Nome = Nome
+        this.Idade = Idade
+        this.Tipo = Tipo
+        this.TipoDeAtaque = TipoDeAtaque
     }
-    atacar(){
-       console.log(`O héroi ${this.name}, do tipo ${this.type}, atacou usando ${this.typeAttack}.`)
+    Atacar(){
+       console.log(`O héroi ${this.Nome}, do tipo ${this.Tipo}, atacou usando ${this.TipoDeAtaque}.`)
         }
  }
 //-------------------------Função com os parametros e ataques--------------------------------------
-function HeroesAttack()
+function AtaqueDosHerois()
 {
-let typeHero1 = new Player("Nico", 16, "Mago", "magia")
-typeHero1.atacar()
-let typeHero2 = new Player("Jason", 16, "Guerreiro", "espada")
-typeHero2.atacar()
-let typeHero3 = new Player("Frank", 16, "Monge", "artes maciais")
-typeHero3.atacar()
-let typeHero4 = new Player("Leo", 16, "Ninja", "shuriken")
-typeHero4.atacar()
+let TipoDoHeroi1 = new Jogador("Nico", 16, "Mago", "magia")
+TipoDoHeroi1.Atacar()
+let TipoDoHeroi2 = new Jogador("Jason", 16, "Guerreiro", "espada")
+TipoDoHeroi2.Atacar()
+let TipoDoHeroi3 = new Jogador("Frank", 16, "Monge", "artes maciais")
+TipoDoHeroi3.Atacar()
+let TipoDoHeroi4 = new Jogador("Leo", 16, "Ninja", "shuriken")
+TipoDoHeroi4.Atacar()
 }
 //--------------------------------Executar as funções----------------------------------------------
-HeroesAttack()
+AtaqueDosHerois()
 //-----------------------------------Fim do Código-------------------------------------------------
