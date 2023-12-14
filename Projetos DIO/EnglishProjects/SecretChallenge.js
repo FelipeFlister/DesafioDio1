@@ -1,3 +1,10 @@
+/* PN: Pokémon Name
+   PT: Pokémon Type 
+   PL: Pokémon Level
+   PH: Pokémon Heatlh
+   PS: Pokémom Sex 
+*/
+
 //--------------------------------The Poke Center Class--------------------------------------------
 class PokeCenter{
     constructor(PN, PT, PL, PH, PS){
@@ -40,4 +47,3 @@ P6.printPokeInfo()
 //---------------------------------Execute the Functions-------------------------------------------
 PrintNotes()
 //--------------------------------------End of Code------------------------------------------------
-console.log("teste")
